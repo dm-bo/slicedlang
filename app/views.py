@@ -1,10 +1,12 @@
 from flask import render_template
-from app import app
+from app import app #, db
 # true need for generator
 import re
 # temporary need
 import fileinput
 from flask import request
+# DB
+from app.models import TextPair
 
 @app.route('/editor', methods=['GET', 'POST'])
 def editor():
@@ -26,24 +28,20 @@ def editor():
 
 @app.route('/lingua')
 def dualvocalbuary():
-	# will be replaced by DB 
-	filename = "raw.rwt"
+	TextPairs = TextPair.query
 	paracount = 0
 	parags = []
-	with open(filename, encoding="utf-8") as file:
-		for line in file:
-			# new-style string work
-			# will be replaced by DB fields
-			phraseorig = line.split(';')[0]
-			phrasetran = line.split(';')[1]
-			
-			paracount += 1
-			parag = {
-				'count': str(paracount),
-				'origparts': parsestringtonicearray(phraseorig),
-				'tranparts': parsestringtonicearray(phrasetran)
-			}
-			parags.append(parag)
+	for pair in TextPairs:
+		phraseorig = pair.vntext
+		phrasetran = pair.rutext
+		
+		paracount += 1
+		parag = {
+			'count': str(paracount),
+			'origparts': parsestringtonicearray(phraseorig),
+			'tranparts': parsestringtonicearray(phrasetran)
+		}
+		parags.append(parag)
 	return render_template("bilingua.html",
 		parags = parags)
 
@@ -51,7 +49,7 @@ def parsestringtonicearray(opstring):
 	opwords = opstring.split("#")
 	nicearray = []
 	for opword in opwords:
-		app.logger.info("opword:: " + opword)
+		#app.logger.info("opword:: " + opword)
 		tagnumber = re.search(r"^\d+",opword)
 		if tagnumber:
 			tnum = tagnumber.group(0)
@@ -59,11 +57,11 @@ def parsestringtonicearray(opstring):
 				'tagnumber': tnum,
 				'part': opword.replace(tnum, '', 1)
 			}
-			app.logger.info("appending:: " + opword.replace(tnum, '', 1))
+			#app.logger.info("appending:: " + opword.replace(tnum, '', 1))
 		else:
 			nextpart = {
 				'part': opword
 			}
-			app.logger.info("appending:: " + opword)
+			#app.logger.info("appending:: " + opword)
 		nicearray.append(nextpart)
 	return nicearray
