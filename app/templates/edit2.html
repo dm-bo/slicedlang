@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<script src="{{ url_for('static',filename='js/editor2.js') }}" ></script>
+	We are editing {{whatweedit}}
+	<table width=680>
+		<tr>
+			<td colspan="2">
+			<button onclick="pasteSelected1('1')">1</button>
+			<button onclick="pasteSelected1('2')">2</button>
+			<button onclick="pasteSelected1('3')">3</button>
+			<button onclick="pasteSelected1('4')">4</button>
+			<button onclick="pasteSelected1('5')">5</button>
+			<button onclick="pasteSelected1('6')">6</button>
+			<button onclick="pasteSelected1('7')">7</button>
+			<button onclick="clearselection()">Clear</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="htmlL1" width="50%">text in L1</td>
+			<td id="htmlL2">text in L2<td>
+		</tr>
+	</table>
+
+	Preview:<br>
+	No preview available.
+
+	<script type="text/javascript">
+		var textL1
+		var textL2
+		window.onload = function () {
+			window.textL1 = "{{textL1}}";
+			window.textL2 = "{{textL2}}";
+			document.getElementById("htmlL1").innerHTML = window.textL1
+			document.getElementById("htmlL2").innerHTML = window.textL2
+			console.log('loaded')
+		}
+	</script> 
+</body>
+</html>

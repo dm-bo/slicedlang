@@ -1,0 +1,69 @@
+from flask import render_template
+from app import app
+# true need for generator
+import re
+# temporary need
+import fileinput
+from flask import request
+
+@app.route('/editor', methods=['GET', 'POST'])
+def editor():
+	textL1 = "cat eats notepad";
+	textL2 = "кот жре матчасть";
+	app.logger.info(request.args)
+	app.logger.info(request.args.get(id))
+	#try:
+	#	app.logger.info(request.args.get(id))
+	#except:
+	#	whatweedit = "new record"
+	#else:
+	#	whatweedit = request.args.get(id)
+	whatweedit = request.args.get(id)
+	return render_template("edit2.html",
+		textL1 = textL1,
+		textL2 = textL2,
+		whatweedit = whatweedit)
+
+@app.route('/lingua')
+def dualvocalbuary():
+	# will be replaced by DB 
+	filename = "raw.rwt"
+	paracount = 0
+	parags = []
+	with open(filename, encoding="utf-8") as file:
+		for line in file:
+			# new-style string work
+			# will be replaced by DB fields
+			phraseorig = line.split(';')[0]
+			phrasetran = line.split(';')[1]
+			
+			paracount += 1
+			parag = {
+				'count': str(paracount),
+				'origparts': parsestringtonicearray(phraseorig),
+				'tranparts': parsestringtonicearray(phrasetran)
+			}
+			parags.append(parag)
+	return render_template("bilingua.html",
+		parags = parags)
+
+def parsestringtonicearray(opstring):
+	opwords = opstring.split("#")
+	nicearray = []
+	for opword in opwords:
+		app.logger.info("opword:: " + opword)
+		tagnumber = re.search(r"^\d+",opword)
+		if tagnumber:
+			tnum = tagnumber.group(0)
+			nextpart = {
+				'tagnumber': tnum,
+				'part': opword.replace(tnum, '', 1)
+			}
+			app.logger.info("appending:: " + opword.replace(tnum, '', 1))
+		else:
+			nextpart = {
+				'part': opword
+			}
+			app.logger.info("appending:: " + opword)
+		nicearray.append(nextpart)
+	return nicearray
