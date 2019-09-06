@@ -8,7 +8,9 @@ from flask import request
 # DB
 from app.models import TextPair
 # experimental
+# not installed in new version, skipping
 from elasticsearch import Elasticsearch
+from flask import Flask, jsonify #, request
 
 @app.route('/editor', methods=['GET', 'POST'])
 def editor():
@@ -74,6 +76,7 @@ def elasticview():
 	print("We are alive")
 	return "hehe"
 
+	
 def query_index(index, query, page, per_page):
 	if not es:
 		return [], 0
