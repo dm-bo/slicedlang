@@ -7,15 +7,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 from elasticsearch import Elasticsearch
 
+#db = SQLAlchemy(app)
+#git
+db = SQLAlchemy()
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
 from app.main import bp as main_bp
 app.register_blueprint(main_bp)
-
-#db = SQLAlchemy(app)
-#git
-db = SQLAlchemy()
 
 app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
 	if app.config['ELASTICSEARCH_URL'] else None

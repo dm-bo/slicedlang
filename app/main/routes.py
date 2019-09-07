@@ -4,8 +4,8 @@ from flask import render_template, flash, redirect, url_for, request, g, \
     jsonify, current_app
 
 # ad hoc
-#from app import db
-#from app.models import TextPair
+from app import db
+from app.models import TextPair
 
 from app.main.forms import SearchForm
 
