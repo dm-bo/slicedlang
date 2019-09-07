@@ -1,0 +1,41 @@
+{% block app_content %}
+    <h1>{{ _('Search Results') }}</h1>
+		{% for parag in parags %}
+		<div id="p{{parag.count}}" class="sentence">
+			<div class="lang">
+			{% for part in parag.origparts %}
+				{% if part.tagnumber %}
+					<span class="word" id="w{{part.tagnumber}}">{{part.part}}</span>
+				{% else %}
+					{{part.part}}
+				{% endif %}
+			{% endfor %}
+			</div><div class="lang">
+			{% for tpart in parag.tranparts %}
+				{% if tpart.tagnumber %}
+					<span class="word" id="w{{tpart.tagnumber}}">{{tpart.part}}</span>
+				{% else %}
+					{{tpart.part}}
+				{% endif %}
+			{% endfor %}
+			</div>
+		</div>
+		<br><br>
+		{% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span>
+                    {{ _('Previous results') }}
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    {{ _('Next results') }}
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

@@ -9,7 +9,13 @@ from elasticsearch import Elasticsearch
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db = SQLAlchemy(app)
+
+from app.main import bp as main_bp
+app.register_blueprint(main_bp)
+
+#db = SQLAlchemy(app)
+#git
+db = SQLAlchemy()
 
 app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
 	if app.config['ELASTICSEARCH_URL'] else None
