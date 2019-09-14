@@ -1,4 +1,8 @@
-from app import db
+from app import app,db
+from app.search import add_to_index, remove_from_index, query_index, query_index_content
+
+# for debugging
+import inspect
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
@@ -57,3 +61,37 @@ class TextPair(db.Model):
 	
 	def __repr__(self):
 		return '<Pair %r>' % (self.vntext)
+	
+	@classmethod
+	def search(cls, expression, page, per_page):
+		if not app.elasticsearch:
+			return [], 0
+		ids, total = query_index_content(cls.__tablename__, expression, page, per_page)
+		if total == 0:
+			return cls.query.filter_by(id=0), 0
+		return ids, total
+		when = []	
+		for i in range(len(ids)):
+			when.append((ids[i], i))
+			print(ids[i])	
+		return when
+		#return cls.query.filter(cls.id.in_(ids)).order_by(
+		#	db.case(when, value=cls.id)), total
+	
+	@classmethod
+	def searchraw(cls, expression, page, per_page):
+		if not app.elasticsearch:
+			return [], 0
+		#print(inspect.getmembers(app.elasticsearch.search))
+		search = app.elasticsearch.search(
+			#index='my_textpairs', doc_type='textpairs',
+			index='my_textpairs',
+			body={'query': {'multi_match': {'query': expression, 'fields': ['*']}},
+				  'from': (page - 1) * per_page, 'size': per_page})
+		# search = app.elasticsearch.search(
+			# index=index, doc_type=index,
+			# body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
+				  # 'from': (page - 1) * per_page, 'size': per_page})
+		ids = [int(hit['_id']) for hit in search['hits']['hits']]
+		return ids, search['hits']['total']
+		return [], 0
