@@ -69,13 +69,6 @@ def parsestringtonicearray(opstring):
 			#app.logger.info("appending:: " + opword)
 		nicearray.append(nextpart)
 	return nicearray
-
-@app.route('/elastic')
-def elasticview():
-	es = Elasticsearch('http://localhost:9200')
-	print("We are alive")
-	return "hehe"
-
 	
 def query_index(index, query, page, per_page):
 	if not es:

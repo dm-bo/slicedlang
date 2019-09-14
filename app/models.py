@@ -1,15 +1,50 @@
-from app import app,db
+from app import db
 from app.search import add_to_index, remove_from_index, query_index, query_index_content
+#from app import app,db
+
 
 # for debugging
 import inspect
 
+# ad hoc
+#from flask import current_app
+
 ROLE_USER = 0
 ROLE_ADMIN = 1
 
-from app.search import add_to_index, remove_from_index, query_index
-
 class SearchableMixin(object):
+	@classmethod
+	def searchraw(cls, expression, page, per_page):
+		ids, total = query_index(cls.__tablename__, expression, page, per_page)
+		if total == 0:
+			return cls.query.filter_by(id=0), 0
+		when = []
+		for i in range(len(ids)):
+			when.append((ids[i], i))
+		TextPairs = cls.query.filter(cls.id.in_(ids)).all()
+		print("DB array")
+		print("TextPairs typ: ", type(TextPairs))
+		print("TextPairs len: ", len(TextPairs))
+		#for cdbresult in TextPairs:
+		#	print(cdbresult.vntext)
+		paracount = 0
+		parags = []
+		for pair in TextPairs:
+			phraseorig = pair.vntext
+			phrasetran = pair.rutext
+			print('phraseorig :', phraseorig)
+			
+			paracount += 1
+			parag = {
+				'count': str(paracount),
+				'origparts': parsestringtonicearray(phraseorig),
+				'tranparts': parsestringtonicearray(phrasetran)
+			}
+			parags.append(parag)
+			print("Appended parag: ", parag)
+		#return ids, search['hits']['total']
+		return parags, total
+	
 	@classmethod
 	def search(cls, expression, page, per_page):
 		ids, total = query_index(cls.__tablename__, expression, page, per_page)
@@ -47,11 +82,11 @@ class SearchableMixin(object):
 		for obj in cls.query:
 			add_to_index(cls.__tablename__, obj)
 	
-db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
-db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
+#db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
+#db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
 #class TextPair(db.Model):
-class TextPair(db.Model):
+class TextPair(SearchableMixin, db.Model):
 	__searchable__ = ['rutext','vntext']
 	id = db.Column(db.Integer, primary_key = True)
 	vntext = db.Column(db.String(400))
@@ -77,21 +112,5 @@ class TextPair(db.Model):
 		return when
 		#return cls.query.filter(cls.id.in_(ids)).order_by(
 		#	db.case(when, value=cls.id)), total
-	
-	@classmethod
-	def searchraw(cls, expression, page, per_page):
-		if not app.elasticsearch:
-			return [], 0
-		#print(inspect.getmembers(app.elasticsearch.search))
-		search = app.elasticsearch.search(
-			#index='my_textpairs', doc_type='textpairs',
-			index='my_textpairs',
-			body={'query': {'multi_match': {'query': expression, 'fields': ['*']}},
-				  'from': (page - 1) * per_page, 'size': per_page})
-		# search = app.elasticsearch.search(
-			# index=index, doc_type=index,
-			# body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
-				  # 'from': (page - 1) * per_page, 'size': per_page})
-		ids = [int(hit['_id']) for hit in search['hits']['hits']]
-		return ids, search['hits']['total']
-		return [], 0
+
+from app.views import parsestringtonicearray

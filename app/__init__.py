@@ -9,10 +9,10 @@ from elasticsearch import Elasticsearch
 
 #db = SQLAlchemy(app)
 #git
-db = SQLAlchemy()
 
 app = Flask(__name__)
 app.config.from_object(Config)
+db = SQLAlchemy(app)
 
 from app.main import bp as main_bp
 app.register_blueprint(main_bp)
