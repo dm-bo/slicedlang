@@ -7,6 +7,16 @@
 	</head>
 	<body>
 		<script src="{{ url_for('static',filename='js/filename.js') }}" ></script>
+		{% if g.search_form %}
+		<form class="navbar-form navbar-left" method="get"
+				action="{{ url_for('main.search') }}">
+			<div class="form-group">
+				{{ g.search_form.q(size=20, class='form-control',
+					placeholder=g.search_form.q.label.text) }}
+			</div>
+		</form>
+		{% endif %}
+		
 		{% block app_content %}
 		<h1>{{ 'Search Results' }}</h1>
 			{% for parag in parags %}
@@ -29,8 +39,9 @@
 				{% endfor %}
 				</div>
 			</div>
-			<br><br>
+			<!--br--><!--br-->
 			{% endfor %}
+			<!--
 			<nav aria-label="...">
 				<ul class="pager">
 					<li class="previous{% if not prev_url %} disabled{% endif %}">
@@ -47,17 +58,7 @@
 					</li>
 				</ul>
 			</nav>
+			-->
 		{% endblock %}
-		
-		{% if g.search_form %}
-		<form class="navbar-form navbar-left" method="get"
-				action="{{ url_for('main.search') }}">
-			<div class="form-group">
-				{{ g.search_form.q(size=20, class='form-control',
-					placeholder=g.search_form.q.label.text) }}
-			</div>
-		</form>
-			<h1>G is here</h1>
-		{% endif %}
 	</body>
 </html>

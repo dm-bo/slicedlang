@@ -5,6 +5,9 @@
    /*console.log("tselector: "+tselector);*/
    els = document.querySelectorAll(tselector);
    for ( var i = 0; i < els.length; i++) {
+		/* #BFB63B - green, sort of */
+		/* #FFFF00 - yellow original */
+		/* #F26B6B - fancy red */
 		els[i].style = "background-color: #FFFF00";
 	}
    /*translation.style="background-color: #FFFF00";*/
