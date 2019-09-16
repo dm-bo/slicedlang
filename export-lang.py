@@ -55,10 +55,9 @@ except:
 
 id = 0
 for line in f:
+	# Get data: id and pair of tagged texts
 	id = line.split(";")[0]
-	#print(line)
 	tagvntext= line.split(";")[1]
-	#print(vntext)
 	tagrutext = line.split(";")[2]
 	
 	# Remove tags and get untagged text for full-text search (this goes to Elastic)
