@@ -12,24 +12,6 @@ from app.models import TextPair
 from elasticsearch import Elasticsearch
 from flask import Flask, jsonify #, request
 
-@app.route('/editor', methods=['GET', 'POST'])
-def editor():
-	textL1 = "cat eats notepad";
-	textL2 = "кот жре матчасть";
-	app.logger.info(request.args)
-	app.logger.info(request.args.get(id))
-	#try:
-	#	app.logger.info(request.args.get(id))
-	#except:
-	#	whatweedit = "new record"
-	#else:
-	#	whatweedit = request.args.get(id)
-	whatweedit = request.args.get(id)
-	return render_template("edit2.html",
-		textL1 = textL1,
-		textL2 = textL2,
-		whatweedit = whatweedit)
-
 @app.route('/lingua')
 def dualvocalbuary():
 	TextPairs = TextPair.query

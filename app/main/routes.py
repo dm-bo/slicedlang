@@ -10,7 +10,7 @@ from app.models import TextPair
 from app.main.forms import SearchForm
 
 # ad hoc
-from flask import request
+from flask import request, redirect
 
 #bp kostyl
 from app.main import bp
@@ -21,13 +21,15 @@ def before_request():
 	#current_user.last_seen = datetime.utcnow()
 	#b.session.commit()
 	g.search_form = SearchForm()
-    #g.locale = str(get_locale())
+	#g.locale = str(get_locale())
 
+@bp.route('/', strict_slashes=False)
 @bp.route('/search')
 #@login_required
 def search():
 	if not g.search_form.validate():
-		return redirect(url_for('main.explore'))
+		#return redirect(url_for('main.explore'))
+		return render_template('search.html', title='Search', parags=[])
 	# какая страница нужна? (из args) По дефолту первая
 	page = request.args.get('page', 1, type=int)
 	#parags, total = TextPair.search(g.search_form.q.data, page, 10)
