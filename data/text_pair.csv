@@ -1,10 +1,12 @@
 1;Cô ấy về nhà bao giờ?;Когда она пошла домой?;vn-bg
 2;Bao giờ cô ấy về nhà?;Когда она пойдёт домой?;vn-bg
 3;Ngày mai bạn làm gì?;Что ты делаешь завтра?;vn-bg
+# sdgfs прювер
 4;Tôi đi chơi với một người bạn. Chúng tôi đi xem phim.;I'm going out with a friend. Мы собираемся посмотреть фильм.;vn-bg
 5;Cô ấy đang mặc áo choàng màu vàng.;She is wearin a yellow blouse.;vn-bg
 6;Nhà bạn ở đường nào?;На какой улице твой дом?;vn-bg
 7;#1Nhà #2tôi #3ở đường #4này.;#2Мой #1дом #3на #4этой #3улице.;vn-bg
+
 8;#1Việt Nam #2có #3bao nhiêu #4người?;#3How many #4people# #5does #1Vietnam #2have#?;vn-bg
 9;#1Cái này #2mắc #3quá #chị! Còn #4cái đó #thì sao? #5Nó #6bao nhiêu?;#1That's #3too #2expensive#! How about #4this one#? #6How much #is #5it?;vn-bg
 10;#1Bạn #2tên #3là #4gì?;#4What #3is #1your #2name?;unkn
@@ -13,3 +15,94 @@
 13;#1Cậu bé #2sẽ #3phải vào #4trường #5đặc biệt. #6Cậu bé #7sẽ #8ổn thôi.;#1Он #2будет #3посещать #5особую #4школу. #6Он #7будет #8молодцом.;op-sub
 14;#6Có người. #1Cậu #2không #3được #4ngồi #5đây.;#6Занято. #1Ты #2не #3можешь #5сюда #4сесть.;op-sub
 15;#1Cậu #2có thể #3ngồi #4đây #5nếu #6cậu muốn.;#1Ты #2можешь #3сесть #4сюда, #5если #6хочешь.;op-sub
+16;#1Cậu #có #2bị ngốc #3không?;#1Ты #2тупой #3или как?;op-sub
+17;#1Cố lên #2Forrest, #3cậu #4làm #5được #6mà.;#1Давай #2Форрест, #3ты #4сможешь #5сделать #6это.;op-sub
+18;#1Được rồi #2Jenny, #3mình #4sẽ ở lại.;#1ОК, #2Дженни. #3Я #4остаюсь.;op-sub
+19;#1Có người #2không #3nghĩ #4thế, #5nhưng #6đúng là có.;#1Некоторые люди #4так #2не #3думают, #5но #6это так.;op-sub
+20;#1Bỏ #2tay #1xuống đi!;#2Руки #1опустите.;op-sub
+21;#1Có #2một món #3trong #4bộ quân #trang có #10thể #11tạo ra #5sự khác biệt #6giữa #7anh sống #8và #9anh chết đấy.;#1Есть #2одна вещь #3в #4армии, #которая #10может #11означать #5разницу #6между #7жизнью #8и #9смертью.;op-sub
+22;#1Không phải #2lúc nào cũng #3vui#.;Это #1не #2всегда #1было #3смешно#.;op-sub
+23;#1Còn Tex #2thì... #3Tôi #4chẳng nhớ #5Tex #6đến từ vùng nào nữa.;#1Текс #2был из... В общем, #3я #4не помню, #6откуда был #5Текс.;op-sub
+24;#1Điều hay ho #3về #4Việt Nam #là #5lúc nào cũng #6có #7chỗ để #8đi.;#3Во #4Вьетнаме #1хорошо то#, что #5всегда #6есть #7куда #8идти.;op-sub
+25;#1Và #2lúc nào cũng #3có #4việc để làm.;#1И #2всегда #3было #4что делать.;op-sub
+26;#1Forrest này, #2tôi #3đang nghĩ #4về một chuyện.;#1Эй, Форрест, #2я #3тут #4кое о чем #3подумал#.;op-sub
+27;#1Cậu #2thấy #3thế nào #4nếu #5cùng tôi #6kinh doanh #7tôm?;#3Как #1ты #2смотришь #на то#, #4чтобы #5мы с тобой вместе #6занялись #7креветочным #6бизнесом?;op-sub
+28;#1Được rồi, #2Forrest#, cháu #3mở #4mắt #3ra đi#.;#1Хорошо, #2Форрест#, теперь #3открой #4глаза#.;op-sub
+29;#1Cảm giác #2thế nào?;#2Что# ты #1чувствуешь#?;op-sub
+30;#1Bà #2muốn #3tôi #4có được #5sự giáo dục #6tốt nhất#, #7vì vậy #8bà #9đã đưa #10tôi #11đến #12Trường Trung tâm #13Hạt Greenbow.;#1Она #2хотела#, чтобы #3я #4получил #6самое лучшее #5образование#, #7и поэтому#, #8она #9отправила #10меня #11в #12Центральную Школу #13Гринбоу.;op-sub
+31;Mẹ, "đi nghỉ" nghĩa là gì ạ?;Мама, что значит отпуск?;op-sub
+32;Có một hôm, tôi và mẹ ra ngoài mua sắm, chúng tôi đi qua cửa hàng đồ gia dụng Benson, đoán thử xem?;Однажды ночью, я и мама отправились по магазинам, и проходили мимо мебельного магазина Винси и представляете что?;op-sub
+33;Cái này không dành cho trẻ con.;Это не для детских глаз.;op-sub
+34;Này nhóc, cho anh xem lại điệu nhảy điên rồ em vừa làm đi.;Слушай, покажи мне еще раз эту сумасшедшую походку.;op-sub
+35;Cũng hay đấy. Cảm ơn bà.;Да, это звучит неплохо. Спасибо мэм.;op-sub
+36;Được rồi, nhưng nếu muốn ăn thì bữa tối dọn ra rồi đấy.;Хорошо. Ужин готов, если вы хотите есть.;op-sub
+37;Tôi vừa chỉ cho cậu ấy đôi điều về ghi-ta thôi mà.;Я покажу ему пару вещей на гитаре.;op-sub
+38;Forrest Gump, đến giờ ăn tối rồi!;Форрест Гамп! Время ужинать!;op-sub
+39;Một lần, có anh chàng nọ ở cùng chúng tôi, và anh ấy có một cái hộp đựng ghi-ta.;Однажды у нас остановился молодой человек, который с собой носил гитару в чехле.;op-sub
+40;Mẹ dặn con không được làm phiền anh chàng đáng mến này mà.;Я просила тебя не надоедать этому красивому молодому человеку.;op-sub
+41;Không sao đâu, thưa bà.;Нет, все в порядке мэм.;op-sub
+42;Mày đâu rồi?;Где ты?;op-sub
+43;Cầu nguyện với mình.;Молись вместе со мной.;op-sub
+44;Chúa ơi, hãy biến con thành chim để con có thể bay xa, xa thật xa khỏi nơi này.;О, Господи! Сделай меня птичкой, чтобы я могла летать высоко-высоко... улететь далеко-далеко отсюда...;op-sub
+45;Mẹ vẫn hay bảo Chúa rất bí ẩn.;Мама всегда говорила, что Бог - всего лишь выдумка.;op-sub
+46;Hôm đó ngài không biến Jenny thành chim.;В этот день он не превратил Дженни в птичку.;op-sub
+47;Thay vào đó, ngài đã phái cảnh sát đến nói rằng... Jenny không phải ở trong ngôi nhà đó nữa.;Взамен, он сделал так, что полиция сказала, чтобы Дженни не оставалась больше жить в этом доме.;op-sub
+48;Cô bé đến sống với bà, đi quá đại lộ Creekmore một tí, điều đó làm tôi vui sướng, vì ở rất gần nhà tôi.;И она отправилась жить к своей бабушке, на Грикмо Авеню, отчего я стал очень счастлив, потому что она теперь была так близко ко мне.;op-sub
+49;Có lẽ là cả hai xảy ra cùng một lúc.;Может быть это происходит сразу одно с другим.;op-sub
+50;Nhưng anh nhớ em lắm, Jenny.;Я скучаю по тебе, Дженни.;op-sub
+51;Nếu em có cần gì, anh không ở xa đâu.;Если тебе что-нибудь понадобится... я буду рядом.;op-sub
+52;Bố biết cuốn này.;Я знаю эту книжку.;op-sub
+53;Con sẽ khoe nó trong giờ kể chuyện bởi vì... bà nội vẫn hay đọc nó cho bố nghe.;Я взял ее в школу, потому что тебе ее бабушка читала.;op-sub
+54;Cuốn yêu thích của bố.;Моя любимая книжка.;op-sub
+55;Bố muốn nói với con là bố yêu con.;Я просто хочу тебе сказать, что я люблю тебя.;op-sub
+56;Con cũng yêu bố, bố ạ.;Я тоже тебя люблю, папа.;op-sub
+57;Bố sẽ ở ngay đây khi con đi học về.;Я буду ждать тебя здесь, когда ты вернешься.;op-sub
+58;Cháu biết đây là xe buýt đến trường rồi, phải không?;Ты хоть понимаешь, что это школьный автобус?;op-sub
+59;Dĩ nhiên rồi ạ, và cô là Dorothy Harris, còn cháu là Forrest Gump.;Да, Дороти Харрис. Я Форрест Гамп.;op-sub
+60;Anh cũng thế.;Я горжусь.;op-sub
+61;Nó có viết cho em một lá thư.;Он... написал тебе письмо.;op-sub
+62;Và nó bảo anh không được đọc.;И он сказал, чтобы я его не читал...;op-sub
+63;Anh không được đọc, nên anh sẽ để lại đây cho em.;Поэтому я не могу этого сделать, я просто оставлю его тебе.;op-sub
+64;Cảnh đó tuyệt đẹp.;Это так прекрасно.;op-sub
+65;Ước gì lúc đó em được ở đấy với anh.;Жаль, что меня не было там с тобой.;op-sub
+66;Em yêu anh.;Я люблю тебя.;op-sub
+67;Em mất vào một buổi sáng thứ Bảy.;Ты умерла в субботнее утро.;op-sub
+68;Và anh đã đặt em ở đây bên dưới cái cây của chúng ta.;И я похоронил тебя под этим деревом.;op-sub
+69;Và căn nhà của bố em anh đã cho san phẳng.;И я сровнял дом твоего отца бульдозером с землей.;op-sub
+70;Mẹ anh... vẫn hay bảo cái chết là một phần của cuộc sống.;Мама всегда говорила, что смерть это всего лишь часть жизни.;op-sub
+71;Sao, em bị ho do cảm lạnh phải không?;Ты кашляешь, ты простыла?;op-sub
+72;Em bị nhiễm một loại vi-rút, và các bác sĩ không... Họ không biết nó là gì, và họ không thể can thiệp được gì cả.;У меня какой-то вирус, и доктора, в общем... они не знают, что это такое и они ничем не могут мне помочь.;op-sub
+73;Em có thể về nhà với anh.;Ты можешь вернуться со мной домой.;op-sub
+74;Jenny, em và bé Forrest có thể đến ở tại nhà anh ở Greenbow.;Дженни, ты и маленький Форрест можете остаться в моем доме в Гринбоу.;op-sub
+75;Anh sẽ chăm sóc em nếu em bị bệnh.;Я смогу позаботиться о тебе, если ты больна.;op-sub
+76;Anh sẽ lấy em chứ, Forrest?;Ты женишься на мне, Форрест?;op-sub
+77;Mời anh chị ngồi.;Пожалуйста сядьте.;op-sub
+78;Đến lúc bắt đầu rồi.;Пора начинать.;op-sub
+79;Anh có chân mới rồi. Chân mới!;У вас новые ноги! Новые ноги!;op-sub
+80;Phải, tôi có đôi chân mới. Hàng đặt đấy! Hợp kim titan.;Да. У меня новые ноги. Сделанные по заказу. Титановый сплав.;op-sub
+81;Hy vọng mọi chuyện sẽ suôn sẻ với cậu!;Надеюсь, у тебя все будет хорошо.;op-sub
+82;Dạo này anh thế nào?;Как ты?;op-sub
+83;Vào đi!;Заходи!;op-sub
+84;Anh nhận được thư của em.;Я получил твое письмо.;op-sub
+85;À, lúc ấy em đang thắc mắc về chuyện đó.;А я так волновалась насчет этого.;op-sub
+86;Nhà em đây à?;Это твой дом?;op-sub
+87;Vâng. Hơi bừa bộn tí.;Да, правда тут грязно.;op-sub
+88;Em vừa đi làm về.;Я только что вернулась с работы.;op-sub
+89;Em có điều hòa không khí kìa.;И кондиционер есть.;op-sub
+90;Anh đã ăn vài miếng.;Я съел немного.;op-sub
+91;Tôi sẽ phải bắt tuyến số 9 đến đường Richmond rồi xuống xe, đi qua một khu nhà bên trái đến số 1947 đường Henry, căn hộ số 4.;Мне нужно сесть на 9 автобус и ехать до Ричмонт Стрит выйти из автобуса и пройти один квартал, на 1947 Хенри стрит, 4 квартира.;op-sub
+92;Tôi thấm mệt rồi.;Я очень устал.;op-sub
+93;Chắc giờ tôi sẽ về nhà.;Думаю мне пора домой.;op-sub
+94;Giờ chúng tôi biết phải làm gì đây?;Что нам теперь делать?;op-sub
+95;Và như thế... quãng ngày chạy bộ của tôi đã kết thúc.;Таким образом... моя пробежка закончилась.;op-sub
+96;Sao thế, anh đâu cần phải bắt xe buýt.;Тебе не надо ехать на автобусе.;op-sub
+97;Đường Henry chỉ cách đây năm, sáu khu nhà theo lối kia.;Хенри стрит в 5-6 кварталах отсюда в ту сторону.;op-sub
+98;Thật vui khi được trò chuyện với bà.;Было очень приятно с вами поболтать.;op-sub
+99;Anh không để nó quên chải đầu và đánh răng mỗi ngày.;Я слежу, чтобы он... причесывался и каждый день чистил зубы.;op-sub
+100;Đây là... vợ chưa cưới của tôi, Susan.;Это... моя невеста, Сьюзан.;op-sub
+101;Trung úy Dan, đây là Jenny của tôi.;Лейтенант Дэн... Это моя Дженни.;op-sub
+102;Xin chào. Thật vui vì cuối cùng cũng được gặp anh.;Привет. Очень рада наконец-то с вами познакомиться.;op-sub
+103;Forrest, con có nhận Jenny làm vợ không?;Берешь ли ты, Форрест, Дженни в жены?;op-sub
+104;Jenny, con có nhận Forrest làm chồng không?;Берешь ли ты, Дженни, Форреста в мужья?;op-sub
+105;Vậy ta tuyên bố hai con là vợ chồng.;Объявляю вас мужем и женой.;op-sub
+106;Forrest này. Hồi ở Việt Nam anh có sợ không?;Эй, Форрест, тебе было страшно во Вьетнаме?;op-sub

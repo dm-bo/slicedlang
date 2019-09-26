@@ -44,19 +44,45 @@ Base.metadata.create_all(engine)
 
 #### ES ####
 es = Elasticsearch('http://localhost:9200')
-f = open('data\\text_pair.csv', 'r', encoding='utf8')
+datapath = 'data\\text_pair.csv'
 try:
-	print('no del')
+	print('Left ES undeleted...')
 	#es.indices.delete('text_pair')
 except:
 	print("C'est la vie")
 
 #### Action for both ####
 
+num_lines = sum(1 for line in open(datapath, 'r', encoding='utf8'))
+print("Working on",num_lines,"lines...")
+
+f = open(datapath, 'r', encoding='utf8')
+
 id = 0
+counter = 0
 for line in f:
+	counter = counter + 1
+	line_arr = line.split(";")
+	
+	# check if line is empty
+	emptypattern = re.compile("^$")
+	if emptypattern.match(line):
+		print("No data at line #",counter)
+		continue
+	
+	# check if line is comment
+	commentpattern = re.compile("^#")
+	if commentpattern.match(line):
+		print("Skippng comment at line #",counter)
+		continue
+	
+	# check if line consist of 4 parts
+	if len(line_arr) != 4:
+		print("Not ok parts",len(line_arr),"at line",counter)
+		continue
+	
 	# Get data: id and pair of tagged texts
-	id = line.split(";")[0]
+	id = line_arr[0]
 	tagvntext= line.split(";")[1]
 	tagrutext = line.split(";")[2]
 	
