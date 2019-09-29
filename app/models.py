@@ -22,11 +22,9 @@ class SearchableMixin(object):
 		for i in range(len(ids)):
 			when.append((ids[i], i))
 		TextPairs = cls.query.filter(cls.id.in_(ids)).all()
-		print("DB array")
-		print("TextPairs typ: ", type(TextPairs))
-		print("TextPairs len: ", len(TextPairs))
-		#for cdbresult in TextPairs:
-		#	print(cdbresult.vntext)
+		# print("DB array")
+		# print("TextPairs typ: ", type(TextPairs))
+		# print("TextPairs len: ", len(TextPairs))
 		paracount = 0
 		parags = []
 		for pair in TextPairs:
@@ -41,8 +39,7 @@ class SearchableMixin(object):
 				'tranparts': parsestringtonicearray(phrasetran)
 			}
 			parags.append(parag)
-			print("Appended parag: ", parag)
-		#return ids, search['hits']['total']
+			# print("Appended parag: ", parag)
 		return parags, total
 	
 	@classmethod
@@ -85,7 +82,6 @@ class SearchableMixin(object):
 #db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 #db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
-#class TextPair(db.Model):
 class TextPair(SearchableMixin, db.Model):
 	__searchable__ = ['rutext','vntext']
 	id = db.Column(db.Integer, primary_key = True)
@@ -110,7 +106,5 @@ class TextPair(SearchableMixin, db.Model):
 			when.append((ids[i], i))
 			print(ids[i])	
 		return when
-		#return cls.query.filter(cls.id.in_(ids)).order_by(
-		#	db.case(when, value=cls.id)), total
 
 from app.views import parsestringtonicearray

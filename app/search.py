@@ -42,19 +42,12 @@ def query_index_content(index, query, page, per_page):
 	print(index)
 	search = current_app.elasticsearch.search(
 		index=index,
-		#index=index, doc_type=index,
-		#index='my_textpairs', doc_type='textpairs',
 		body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
 			  'from': (page - 1) * per_page, 'size': per_page})
-	# search = app.elasticsearch.search(
-		# index=index, doc_type=index,
-		# body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
-			  # 'from': (page - 1) * per_page, 'size': per_page})
-	#ids = [int(hit['_id']) for hit in search['hits']['hits']]
 	parags = []
-	print('Forming parags...')
+	#print('Forming parags...')
 	if search['hits']['total'] == 0:
-		print('We havent(')
+		#print('We havent(')
 		return [], 0
 	for hit in search['hits']['hits']:
 		parag = {
@@ -62,8 +55,8 @@ def query_index_content(index, query, page, per_page):
 			'origparts': parsestringtonicearray(hit['_source']['rutext']),
 			'tranparts': parsestringtonicearray(hit['_source']['vntext'])
 		}
-		print(hit['_id'])
-		print(hit['_source']['vntext'])
+		#print(hit['_id'])
+		#print(hit['_source']['vntext'])
 		parags.append(parag)
 	#print('Returning:')
 	#print(parags)
