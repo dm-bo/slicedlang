@@ -1,8 +1,9 @@
 # Let's import all the shit, IDK what is it
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField
+#from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
-#(chapter 3)
+# (chapter 3)
 
 from flask import request
 

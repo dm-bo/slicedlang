@@ -12,6 +12,7 @@ from app.models import TextPair
 from elasticsearch import Elasticsearch
 from flask import Flask, jsonify #, request
 
+# obsolete
 @app.route('/lingua')
 def dualvocalbuary():
 	TextPairs = TextPair.query
@@ -51,16 +52,7 @@ def parsestringtonicearray(opstring):
 			#app.logger.info("appending:: " + opword)
 		nicearray.append(nextpart)
 	return nicearray
-	
-def query_index(index, query, page, per_page):
-	if not es:
-		return [], 0
-	search = es.search(
-		index=index, doc_type=index,
-		body={'query': {'multi_match': {'query': query, 'fields': ['*']}},
-		      'from': (page - 1) * per_page, 'size': per_page})
-	ids = [int(hit['_id']) for hit in search['hits']['hits']]
-	return ids, search['hits']['total']
+
 
 
 
