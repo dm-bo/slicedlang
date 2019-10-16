@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-#bp kostyl
+# bp kostyl
 from app import app
 
 bp = Blueprint('main', __name__)

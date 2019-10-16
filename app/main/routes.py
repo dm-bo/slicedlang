@@ -1,41 +1,42 @@
-#from flask import g
+from flask import g
 # from git
-from flask import render_template, flash, redirect, url_for, request, g, \
-    jsonify, current_app
+from flask import render_template
 
 # ad hoc
-from app import db
+# from app import db
 from app.models import TextPair
 
 from app.main.forms import SearchForm
 
 # ad hoc
-from flask import request, redirect
+from flask import request
 
-#bp kostyl
+# bp kostyl
 from app.main import bp
+
 
 @bp.before_app_request
 def before_request():
-	#if current_user.is_authenticated:
-	#current_user.last_seen = datetime.utcnow()
-	#b.session.commit()
-	g.search_form = SearchForm()
-	#g.locale = str(get_locale())
+    # if current_user.is_authenticated:
+    # current_user.last_seen = datetime.utcnow()
+    # b.session.commit()
+    g.search_form = SearchForm()
+
+
+# g.locale = str(get_locale())
 
 @bp.route('/', strict_slashes=False)
 @bp.route('/search')
-#@login_required
+# @login_required
 def search():
-	if not g.search_form.validate():
-		#return redirect(url_for('main.explore'))
-		return render_template('search.html', title='Search', parags=[])
-	# какая страница нужна? (из args) По дефолту первая
-	page = request.args.get('page', 1, type=int)
-	#parags, total = TextPair.search(g.search_form.q.data, page, 10)
-	parags, total = TextPair.searchraw(g.search_form.q.data, page, 10)
-	#						   current_app.config['POSTS_PER_PAGE'])
-	if total == 0:
-		return render_template('search.html', title='Search', parags=[])
-	else:
-		return render_template('search.html', title='Search', parags=parags)
+    if not g.search_form.validate():
+        # return redirect(url_for('main.explore'))
+        return render_template('search.html', title='Search', parags=[])
+    # какая страница нужна? (из args) По дефолту первая
+    page = request.args.get('page', 1, type=int)
+    parags, total = TextPair.searchraw(g.search_form.q.data, page, 10)
+    #						   current_app.config['POSTS_PER_PAGE'])
+    if total == 0:
+        return render_template('search.html', title='Search', parags=[])
+    else:
+        return render_template('search.html', title='Search', parags=parags)

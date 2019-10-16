@@ -4,10 +4,10 @@ from app.search import add_to_index, remove_from_index, query_index, query_index
 
 
 # for debugging
-import inspect
+# import inspect
 
 # ad hoc
-#from flask import current_app
+# from flask import current_app
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
@@ -30,7 +30,7 @@ class SearchableMixin(object):
 		for pair in TextPairs:
 			phraseorig = pair.vntext
 			phrasetran = pair.rutext
-			print('phraseorig :', phraseorig)
+			# print('phraseorig :', phraseorig)
 			
 			paracount += 1
 			parag = {
