@@ -1,4 +1,4 @@
-from app.search import add_to_index, remove_from_index, query_index, query_index_content
+from search import add_to_index, remove_from_index, query_index, query_index_content
 from flask_sqlalchemy import SQLAlchemy
 
 # ad hoc
