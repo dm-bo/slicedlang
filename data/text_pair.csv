@@ -1,12 +1,12 @@
 1;Cô ấy về nhà bao giờ?;Когда она пошла домой?;vn-bg
 2;Bao giờ cô ấy về nhà?;Когда она пойдёт домой?;vn-bg
 3;Ngày mai bạn làm gì?;Что ты делаешь завтра?;vn-bg
-# sdgfs прювер
+# sdgfs прювер;;;
 4;Tôi đi chơi với một người bạn. Chúng tôi đi xem phim.;I'm going out with a friend. Мы собираемся посмотреть фильм.;vn-bg
 5;Cô ấy đang mặc áo choàng màu vàng.;She is wearin a yellow blouse.;vn-bg
 6;Nhà bạn ở đường nào?;На какой улице твой дом?;vn-bg
 7;#1Nhà #2tôi #3ở đường #4này.;#2Мой #1дом #3на #4этой #3улице.;vn-bg
-
+;;;
 8;#1Việt Nam #2có #3bao nhiêu #4người?;#3How many #4people# #5does #1Vietnam #2have#?;vn-bg
 9;#1Cái này #2mắc #3quá #chị! Còn #4cái đó #thì sao? #5Nó #6bao nhiêu?;#1That's #3too #2expensive#! How about #4this one#? #6How much #is #5it?;vn-bg
 10;#1Bạn #2tên #3là #4gì?;#4What #3is #1your #2name?;unkn
@@ -51,7 +51,7 @@
 49;Có lẽ là cả hai xảy ra cùng một lúc.;Может быть это происходит сразу одно с другим.;op-sub
 50;Nhưng anh nhớ em lắm, Jenny.;Я скучаю по тебе, Дженни.;op-sub
 51;Nếu em có cần gì, anh không ở xa đâu.;Если тебе что-нибудь понадобится... я буду рядом.;op-sub
-52;Bố biết cuốn này.;Я знаю эту книжку.;op-sub
+52;#1Bố #2biết #3cuốn #4này.;#1Я #2знаю #4эту #3книжку.;op-sub
 53;Con sẽ khoe nó trong giờ kể chuyện bởi vì... bà nội vẫn hay đọc nó cho bố nghe.;Я взял ее в школу, потому что тебе ее бабушка читала.;op-sub
 54;Cuốn yêu thích của bố.;Моя любимая книжка.;op-sub
 55;Bố muốn nói với con là bố yêu con.;Я просто хочу тебе сказать, что я люблю тебя.;op-sub
@@ -100,9 +100,25 @@
 98;Thật vui khi được trò chuyện với bà.;Было очень приятно с вами поболтать.;op-sub
 99;Anh không để nó quên chải đầu và đánh răng mỗi ngày.;Я слежу, чтобы он... причесывался и каждый день чистил зубы.;op-sub
 100;Đây là... vợ chưa cưới của tôi, Susan.;Это... моя невеста, Сьюзан.;op-sub
-101;Trung úy Dan, đây là Jenny của tôi.;Лейтенант Дэн... Это моя Дженни.;op-sub
+101;#1Trung úy #2Dan, #3đây là #4Jenny #5của tôi.;#1Лейтенант #2Дэн... #3Это #5моя #4Дженни.;op-sub
 102;Xin chào. Thật vui vì cuối cùng cũng được gặp anh.;Привет. Очень рада наконец-то с вами познакомиться.;op-sub
 103;Forrest, con có nhận Jenny làm vợ không?;Берешь ли ты, Форрест, Дженни в жены?;op-sub
 104;Jenny, con có nhận Forrest làm chồng không?;Берешь ли ты, Дженни, Форреста в мужья?;op-sub
 105;Vậy ta tuyên bố hai con là vợ chồng.;Объявляю вас мужем и женой.;op-sub
 106;Forrest này. Hồi ở Việt Nam anh có sợ không?;Эй, Форрест, тебе было страшно во Вьетнаме?;op-sub
+;;;
+107;#1Bubba #2là #3người bạn #4tốt #6nhất #5của tôi.;#1Бабба #2был #5моим #6самым #4лучшим #3другом.;op-sub
+108;Tôi phải chắc chắn là cậu ấy không sao.;Мне нужно было удостовериться, что с ним все нормально.;op-sub
+109;Trên đường quay lại tìm Bubba, tôi bắt gặp cậu bé này đang nằm trên mặt đất.;На своем пути обратно в поисках Баббы, я увидел этого мальчика, лежащего на земле.;op-sub
+110;Tôi không thể để cậu ấy nằm đó một mình, hoảng sợ như vậy, nên tôi vác cậu ta lên và chạy đưa cậu ta ra khỏi đó.;Я не мог позволить остаться лежать ему одному, ему было очень страшно, я поднял его, и убежал с ним оттуда.;op-sub
+111;"Mỗi lần tôi quay lại tìm Bubba, lại có người nào đó nói, ""Cứu tôi, Forrest. Cứu tôi với.""";"Каждый раз, когда я возвращался искать Баббу, кто-то другой говорил мне, ""Помоги мне Форрест. Помоги мне!""";op-sub
+112;Tôi bắt đầu lo sợ rằng sẽ không bao giờ tìm được Bubba.;Я уже стал побаиваться, что Баббу я так и не найду.;op-sub
+113;Strongarm, tôi biết vị trí này cận kề nguy hiểm.;Я знаю наше положение, Здесь опасно!;op-sub
+114;Vùng này đầy rẫy Charlie.;Здесь повсюду вьетнамцы.;op-sub
+115;Tôi cần oanh tạc cơ đến đây ngay. Hết.;Я требую немедленно выслать вертолет. Слышите?;op-sub
+116;Trung úy Dan, Coleman chết rồi!;Лейтенант Дэн, Колеман мертв.;op-sub
+117;Tôi biết cậu ta chết rồi!;Я знаю,что он мертв!;op-sub
+118;Cả trung đội chết bầm của tôi đã bị quét sạch!;Весь мой взвод уничтожен. Черт!;op-sub
+119;Cậu làm gì thế?;Что ты делаешь?;op-sub
+120;Thông báo oanh tạc cơ hiện đang trên đường tới, hết.;Вам нужно немедленно уйти из зоны обстрела.;op-sub
+121;Sau đó tôi cảm thấy như có gì đó nhảy bổ ra cắn tôi.;Вдруг я почувствовал, что что-то подпрыгнуло и укусило меня.;op-sub
