@@ -1,16 +1,13 @@
-from app import db
 from app.search import add_to_index, remove_from_index, query_index, query_index_content
-#from app import app,db
-
-
-# for debugging
-# import inspect
+from flask_sqlalchemy import SQLAlchemy
 
 # ad hoc
 # from flask import current_app
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
+
+db = SQLAlchemy()
 
 class SearchableMixin(object):
 	@classmethod
@@ -107,4 +104,4 @@ class TextPair(SearchableMixin, db.Model):
 			print(ids[i])	
 		return when
 
-from app.views import parsestringtonicearray
+from views import parsestringtonicearray

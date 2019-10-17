@@ -1,19 +1,20 @@
 from flask import g
 # from git
 from flask import render_template
+# strange import
+# from flask import render_template, flash, redirect, url_for, request, g, \
+#    jsonify, current_app
 
 # ad hoc
 # from app import db
-from app.models import TextPair
+from models import TextPair
 
-from app.main.forms import SearchForm
+from main.forms import SearchForm
 
 # ad hoc
 from flask import request
 
-# bp kostyl
-from app.main import bp
-
+from main import bp
 
 @bp.before_app_request
 def before_request():

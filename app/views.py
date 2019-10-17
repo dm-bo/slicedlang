@@ -1,19 +1,18 @@
 from flask import render_template
-from app import app #, db
 # true need for generator
 import re
 # temporary need
 import fileinput
 from flask import request
 # DB
-from app.models import TextPair
+from models import TextPair
 # experimental
 # not installed in new version, skipping
 from elasticsearch import Elasticsearch
-from flask import Flask, jsonify #, request
+from flask import Flask, jsonify
 
 # obsolete
-@app.route('/lingua')
+# @app.route('/lingua')
 def dualvocalbuary():
 	TextPairs = TextPair.query
 	paracount = 0
