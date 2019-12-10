@@ -13,7 +13,7 @@ import re
 #### SQL ####
 # https://ru.wikibooks.org/wiki/SQLAlchemy
 basedir = os.path.abspath(os.path.dirname(__file__))
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app/app.db')
 Session = sessionmaker()
 engine = create_engine(SQLALCHEMY_DATABASE_URI, echo=False)
 Session.configure(bind=engine)
@@ -44,7 +44,7 @@ Base.metadata.create_all(engine)
 
 #### ES ####
 es = Elasticsearch('http://localhost:9200')
-datapath = 'data\\text_pair.csv'
+datapath = 'data/text_pair.csv'
 try:
 	print('Left ES undeleted...')
 	#es.indices.delete('text_pair')

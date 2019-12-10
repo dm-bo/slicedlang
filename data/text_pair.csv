@@ -6,7 +6,7 @@
 5;Cô ấy đang mặc áo choàng màu vàng.;She is wearin a yellow blouse.;vn-bg
 6;Nhà bạn ở đường nào?;На какой улице твой дом?;vn-bg
 7;#1Nhà #2tôi #3ở đường #4này.;#2Мой #1дом #3на #4этой #3улице.;vn-bg
-;;;
+#;;; - это эксепшн
 8;#1Việt Nam #2có #3bao nhiêu #4người?;#3How many #4people# #5does #1Vietnam #2have#?;vn-bg
 9;#1Cái này #2mắc #3quá #chị! Còn #4cái đó #thì sao? #5Nó #6bao nhiêu?;#1That's #3too #2expensive#! How about #4this one#? #6How much #is #5it?;vn-bg
 10;#1Bạn #2tên #3là #4gì?;#4What #3is #1your #2name?;unkn
@@ -106,7 +106,7 @@
 104;Jenny, con có nhận Forrest làm chồng không?;Берешь ли ты, Дженни, Форреста в мужья?;op-sub
 105;Vậy ta tuyên bố hai con là vợ chồng.;Объявляю вас мужем и женой.;op-sub
 106;Forrest này. Hồi ở Việt Nam anh có sợ không?;Эй, Форрест, тебе было страшно во Вьетнаме?;op-sub
-;;;
+#;;;
 107;#1Bubba #2là #3người bạn #4tốt #6nhất #5của tôi.;#1Бабба #2был #5моим #6самым #4лучшим #3другом.;op-sub
 108;Tôi phải chắc chắn là cậu ấy không sao.;Мне нужно было удостовериться, что с ним все нормально.;op-sub
 109;Trên đường quay lại tìm Bubba, tôi bắt gặp cậu bé này đang nằm trên mặt đất.;На своем пути обратно в поисках Баббы, я увидел этого мальчика, лежащего на земле.;op-sub
