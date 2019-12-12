@@ -41,3 +41,8 @@ def search():
         return render_template('search.html', title='Search', parags=[])
     else:
         return render_template('search.html', title='Search', parags=parags)
+
+@bp.route('/about')
+def showabout():
+    return render_template("about.html")
+
