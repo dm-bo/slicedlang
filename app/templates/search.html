@@ -2,6 +2,7 @@
 <html lang="vi">
 	<head>
 		<!--meta charset="utf-8"/-->
+		<title>dihoc.ru — русско-вьетнамский контекстный словарь</title>
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mysite.css') }}">
 		<title>SBS</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
@@ -14,7 +15,10 @@
 	</head>
 	<body>
 		<script src="{{ url_for('static',filename='js/filename.js') }}" ></script>
+	<div class="container">
+	<div class="inner-container">
 		{% if g.search_form %}
+		<br>
 		<form class="navbar-form navbar-left" method="get"
 				action="{{ url_for('main.search') }}">
 			<div class="form-group">
@@ -22,6 +26,7 @@
 					placeholder=g.search_form.q.label.text) }}
 			</div>
 		</form>
+		<br>
 		{% endif %}
 		
 		{% block app_content %}
@@ -67,5 +72,11 @@
 			</nav>
 			-->
 		{% endblock %}
+		<br>
+		<div class="footer">
+			<a href="https://dihoc.ru/about">О сайте</a>
+		</div>
+	</div>
+	</div>
 	</body>
 </html>

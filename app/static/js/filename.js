@@ -27,5 +27,8 @@
 		/* console.log('working on element '+i); */
 		rumples[i].onmouseover = function() { won(this.id,this.parentNode.parentNode.id); };
 		rumples[i].onmouseout = function() { woff(this.id,this.parentNode.parentNode.id); };
+		rumples[i].onmousedown = function() { won(this.id,this.parentNode.parentNode.id); };
+		rumples[i].onmouseup = function() { woff(this.id,this.parentNode.parentNode.id); };
 	}
+	document.getElementById("q").focus();
   }
