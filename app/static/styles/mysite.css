@@ -2,11 +2,40 @@
 		/* background-color: #f0f0f0;*/ /* Цвет текста */
 		/* width: 400px; */
 		float: left;
-		margin: 5px;
 		text-align: left;
+		margin: 5px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 45%;
+		font-family: 'Marmelad', sans-serif;
+		font-size: 1.25rem;
+	}
+	
+	/* https://habr.com/ru/company/mailru/blog/315196/ */
+	@media (min-width: 320px) {
+		.lang { 
+			float: left;
+			margin: 5px;
+			text-align: left;
+			margin-left: auto;
+			margin-right: auto;
+			width: 45%;
+			font-family: 'Marmelad', sans-serif;
+			font-size: calc(1.25rem + 3vw);
+		}
+	}
+	
+	@media (min-width: 960px) {
+		.lang { 
+			float: left;
+			margin: 5px;
+			text-align: left;
+			margin-left: auto;
+			margin-right: auto;
+			width: 45%;
+			font-family: 'Marmelad', sans-serif;
+			font-size: 1.25rem;
+		}
 	}
 	
 	div.sentence { 
@@ -15,13 +44,24 @@
 		display: inline-block;
 		border-radius: 10px;
 		background-color: #B0D91E;
-		font-family: 'Marmelad', sans-serif;
 		width: 90%;
 		padding: 5px;
 		margin: auto;
 		margin-left: auto;
 		margin-right: auto;
 		display: flex;
+	}
+
+	div.entire-form { 
+		/*margin-bottom: 10px;
+		display: inline-block;
+		display: inline-flex;*/
+		width: 90%;
+		padding: 5px;
+		margin: auto;
+		margin-left: auto;
+		margin-right: auto;
+		display: table;
 	}
 	
 	h1 {
@@ -46,7 +86,7 @@
 	
 	input.form-control {
 		font-size: 20pt;
-		width: 90%;
+		width: 100%;
 		border-radius: 5px;
 		/*border: 1px solid;*/
 	}

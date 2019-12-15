@@ -14,18 +14,28 @@
 		</style>
 	</head>
 	<body>
-		<script src="{{ url_for('static',filename='js/filename.js') }}" ></script>
+	<script src="{{ url_for('static',filename='js/filename.js') }}" ></script>
 	<div class="container">
 	<div class="inner-container">
 		{% if g.search_form %}
 		<br>
-		<form class="navbar-form navbar-left" method="get"
-				action="{{ url_for('main.search') }}">
-			<div class="form-group">
-				{{ g.search_form.q(size=20, class='form-control',
-					placeholder=g.search_form.q.label.text) }}
+		<div class="entire-form">
+			<form class="navbar-form navbar-left" method="get"
+					action="{{ url_for('main.search') }}">
+			<div class="form-group" style="display: flex;">
+				<div style="flex-grow: 0.8; display: flex;"> 
+					<div class="form-group">
+						{{ g.search_form.q(size=20, class='form-control',
+							placeholder=g.search_form.q.label.text) }}
+					<!--input class="form-control" id="q" name="q" placeholder="Search" required="" size="20" type="text" value="бабба"-->
+					</div>
+				</div>
+				<div style="flex-grow: 0.2; display: flex;"> 
+					<input type="submit" value="Отправить" style="font-size: 20pt; width: 100%;">
+				</div>
 			</div>
-		</form>
+			</form>
+		</div>
 		<br>
 		{% endif %}
 		
