@@ -10,6 +10,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 import re
 
+import argparse
+parser = argparse.ArgumentParser(description='Exporting CSV files.')
+parser.add_argument('infile', type=str, help='Input file')
+args = parser.parse_args()
+
 #### SQL ####
 # https://ru.wikibooks.org/wiki/SQLAlchemy
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -44,7 +49,8 @@ Base.metadata.create_all(engine)
 
 #### ES ####
 es = Elasticsearch('http://localhost:9200')
-datapath = 'data/text_pair.csv'
+#datapath = 'data/text_pair.csv'
+datapath = args.infile
 try:
 	print('Left ES undeleted...')
 	#es.indices.delete('text_pair')
