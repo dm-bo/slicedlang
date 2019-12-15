@@ -41,7 +41,8 @@ class TextPair(Base):
 
 try:
 	# https://stackoverflow.com/questions/35918605/how-to-delete-a-table-in-sqlalchemy
-	TextPair.__table__.drop(engine)
+	#TextPair.__table__.drop(engine)
+	print("No DB drop.")
 except:
 	print("No base, no care.")
 
