@@ -31,10 +31,6 @@ def dualvocalbuary():
 	return render_template("bilingua.html",
 		parags = parags)
 
-@app.route('/about')
-def showabout():
-	return render_template("about.html")
-
 def parsestringtonicearray(opstring):
 	opwords = opstring.split("#")
 	nicearray = []
