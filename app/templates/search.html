@@ -24,11 +24,11 @@
 					action="{{ url_for('main.search') }}">
 			<div class="form-group" style="display: flex;">
 				<div style="flex-grow: 0.8; display: flex;"> 
-					<div class="form-group">
+					
 						{{ g.search_form.q(size=20, class='form-control',
 							placeholder=g.search_form.q.label.text) }}
 					<!--input class="form-control" id="q" name="q" placeholder="Search" required="" size="20" type="text" value="бабба"-->
-					</div>
+					
 				</div>
 				<div style="flex-grow: 0.2; display: flex;"> 
 					<input type="submit" value="Отправить" style="font-size: 20pt; width: 100%;">
