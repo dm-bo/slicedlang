@@ -40,7 +40,7 @@
 		{% endif %}
 		
 		{% block app_content %}
-		<h1>{{ 'Search Results' }}</h1>
+		<h1>{{ 'Search Results:' }} {{total}} entries for <i>{{query}}</i></h1>
 			{% for parag in parags %}
 			<div id="p{{parag.count}}" class="sentence">
 				<div class="lang">

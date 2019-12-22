@@ -38,9 +38,9 @@ def search():
     parags, total = TextPair.searchraw(g.search_form.q.data, page, 10)
     #						   current_app.config['POSTS_PER_PAGE'])
     if total == 0:
-        return render_template('search.html', title='Search', parags=[])
+        return render_template('search.html', title='Search', parags=[], total=total, query=g.search_form.q.data)
     else:
-        return render_template('search.html', title='Search', parags=parags)
+        return render_template('search.html', title='Search', parags=parags, total=total, query=g.search_form.q.data)
 
 @bp.route('/about')
 def showabout():
