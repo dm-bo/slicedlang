@@ -31,4 +31,7 @@
 		rumples[i].onmouseup = function() { woff(this.id,this.parentNode.parentNode.id); };
 	}
 	document.getElementById("q").focus();
+	oldval = document.getElementById('q').value
+	document.getElementById('q').value = ""
+	document.getElementById('q').value = oldval
   }
