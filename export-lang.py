@@ -10,6 +10,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 import re
 
+import argparse
+parser = argparse.ArgumentParser(description='Exporting CSV files.')
+parser.add_argument('infile', type=str, help='Input file')
+args = parser.parse_args()
+
 #### SQL ####
 # https://ru.wikibooks.org/wiki/SQLAlchemy
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -36,7 +41,8 @@ class TextPair(Base):
 
 try:
 	# https://stackoverflow.com/questions/35918605/how-to-delete-a-table-in-sqlalchemy
-	TextPair.__table__.drop(engine)
+	#TextPair.__table__.drop(engine)
+	print("No DB drop.")
 except:
 	print("No base, no care.")
 
@@ -44,7 +50,8 @@ Base.metadata.create_all(engine)
 
 #### ES ####
 es = Elasticsearch('http://localhost:9200')
-datapath = 'data/text_pair.csv'
+#datapath = 'data/text_pair.csv'
+datapath = args.infile
 try:
 	print('Left ES undeleted...')
 	#es.indices.delete('text_pair')
