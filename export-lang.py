@@ -67,6 +67,7 @@ f = open(datapath, 'r', encoding='utf8')
 
 id = 0
 counter = 0
+session = Session()
 for line in f:
 	counter = counter + 1
 	line_arr = line.split(";")
@@ -90,9 +91,20 @@ for line in f:
 	
 	# Get data: id and pair of tagged texts
 	id = line_arr[0]
-	tagvntext= line.split(";")[1]
+	tagvntext = line.split(";")[1]
 	tagrutext = line.split(";")[2]
 	
+	# Check if record should be removed instead of upserted
+	if tagvntext == "(deleted)" or tagrutext == "(deleted)":
+		print("Removing textpair at line", counter, "( id =", id, ")")
+		try:
+			es.delete(index="text_pair",doc_type="text_pair",id=id)
+		except:
+			print("id", id,"not found, possibly already removed.")
+		# not sure if it works
+		session.query(TextPair).filter(TextPair.id==id).delete()
+		continue
+
 	# Remove tags and get untagged text for full-text search (this goes to Elastic)
 	vntext = re.sub(r'#\d+', '', tagvntext)
 	rutext = re.sub(r'#\d+', '', tagrutext)
@@ -101,7 +113,10 @@ for line in f:
 	
 	#print("2SQL: ", id, " ", tagvntext, " ", tagrutext)
 	tp = TextPair(id=id,vntext=tagvntext, rutext=tagrutext)
-	session = Session()
+	session.query(TextPair).filter(TextPair.id==id).delete()
+	session.commit()
 	session.add(tp)
 	session.commit()
+	print(counter, end = "\r")
+print("Completed.")
 exit()
