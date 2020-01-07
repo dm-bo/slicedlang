@@ -37,6 +37,7 @@ def search():
     page = request.args.get('page', 1, type=int)
     parags, total = TextPair.searchraw(g.search_form.q.data, page, 10)
     #						   current_app.config['POSTS_PER_PAGE'])
+    # FIXME useless "title"
     if total == 0:
         return render_template('search.html', title='Search', parags=[], total=total, query=g.search_form.q.data)
     else:

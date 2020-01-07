@@ -27,13 +27,12 @@ class SearchableMixin(object):
 		for pair in TextPairs:
 			phraseorig = pair.vntext
 			phrasetran = pair.rutext
-			# print('phraseorig :', phraseorig)
-			
 			paracount += 1
 			parag = {
 				'count': str(paracount),
 				'origparts': parsestringtonicearray(phraseorig),
-				'tranparts': parsestringtonicearray(phrasetran)
+				'tranparts': parsestringtonicearray(phrasetran),
+				'hint':  str(pair.id) + ', ' + str(pair.comment)
 			}
 			parags.append(parag)
 			# print("Appended parag: ", parag)
