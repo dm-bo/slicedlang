@@ -7,7 +7,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		width: 45%;
-		font-family: 'Marmelad', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		font-size: 1.25rem;
 	}
 	
@@ -20,7 +20,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 45%;
-			font-family: 'Marmelad', sans-serif;
+			font-family: 'Open Sans', sans-serif;
 			font-size: calc(1.25rem + 3vw);
 		}
 	}
@@ -33,7 +33,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			width: 45%;
-			font-family: 'Marmelad', sans-serif;
+			font-family: 'Open Sans', sans-serif;
 			font-size: 1.25rem;
 		}
 	}
@@ -109,14 +109,14 @@
 	}
 	
 	div.about {
-		font-family: 'Marmelad', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		text-align: left;
 	}
 	
 	div.footer {
 		margin-bottom: 10px;
 		display: inline-block;
-		font-family: 'Marmelad', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		width: 90%;
 		padding: 5px;
 		margin: auto;
@@ -124,3 +124,11 @@
 		margin-right: auto;
 		display: flex;
 	}
+	
+	span.word-hl {
+		font-weight: bold;
+		/* text-decoration: underline; */
+		font-style: italic;
+		/* color: #BFB63B; */
+	}
+	
