@@ -30,18 +30,23 @@ def before_request():
 @bp.route('/search')
 # @login_required
 def search():
+    messages = []
     if not g.search_form.validate():
         # return redirect(url_for('main.explore'))
-        return render_template('search.html', title='Search', parags=[])
+        # messages.append("You search nothing.")
+        # print("u serch noting")
+        return render_template('search.html', title='Search', parags=[], mesgs=messages)
     # какая страница нужна? (из args) По дефолту первая
     page = request.args.get('page', 1, type=int)
     parags, total = TextPair.searchraw(g.search_form.q.data, page, 10)
     #						   current_app.config['POSTS_PER_PAGE'])
+    # print("search q: " + g.search_form.q.data)
+    # messages = ["waasup bro","letz go get high"]
     # FIXME useless "title"
     if total == 0:
-        return render_template('search.html', title='Search', parags=[], total=total, query=g.search_form.q.data)
+        return render_template('search.html', title='Search', parags=[], total=total, query=g.search_form.q.data, mesgs=messages)
     else:
-        return render_template('search.html', title='Search', parags=parags, total=total, query=g.search_form.q.data)
+        return render_template('search.html', title='Search', parags=parags, total=total, query=g.search_form.q.data, mesgs=messages)
 
 @bp.route('/about')
 def showabout():

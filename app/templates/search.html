@@ -28,9 +28,9 @@
 					action="{{ url_for('main.search') }}">
 			<div class="form-group" style="display: flex;">
 				<div style="flex-grow: 0.8; display: flex;"> 
-					
+					<!-- g.search_form.q.label.text -->
 						{{ g.search_form.q(size=20, class='form-control',
-							placeholder=g.search_form.q.label.text) }}
+							placeholder='пиши по-русски или bắng tiếng Việt') }}
 					<!--input class="form-control" id="q" name="q" placeholder="Search" required="" size="20" type="text" value="бабба"-->
 					
 				</div>
@@ -44,6 +44,9 @@
 		{% endif %}
 		
 		{% block app_content %}
+			{% for mesg in mesgs %}
+				<div class="message">{{mesg}}</div>
+			{% endfor %}
 			{% for parag in parags %}
 			<div id="p{{parag.count}}" class="sentence">
 				<div class="lang">
@@ -85,7 +88,14 @@
 				</ul>
 			</nav>
 			-->
-		<h1>{{ 'Search Results:' }} {{total}} entries for <i>{{query}}</i></h1>
+			{% if g.search_form.q.data %}
+				<h1>{{ 'Найдено' }} {{total}} фраз по запросу <i>{{query}}</i></h1>
+			{% else %}
+				{% include "includes/about.j2" %}
+			{% endif %}
+
+			
+
 		{% endblock %}
 		<br>
 		<div class="footer">
