@@ -89,6 +89,7 @@
 			{% if g.search_form.q.data %}
 				<h1>{{ 'Найдено' }} {{total}} фраз по запросу <i>{{query}}</i></h1>
 			{% else %}
+				{% include "includes/news.j2" ignore missing %}
 				{% include "includes/about.j2" %}
 			{% endif %}
 
